@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>كل المنتجات | RM Shoes</title>
+  <meta name="description" content="تسوّق أحذية رجالي وحريمي وأطفال من RM Shoes.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="shop">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="container page">
+    <div class="page-head">
+      <h1 id="shop-title">كل المنتجات</h1>
+      <p class="muted" id="result-count"></p>
+    </div>
+
+    <div class="shop-layout">
+      <aside class="filters" id="filters" aria-label="الفلاتر">
+        <div class="filter-block">
+          <label for="f-q" class="filter-label">بحث</label>
+          <input type="search" id="f-q" class="input" placeholder="اسم المنتج…">
+        </div>
+
+        <div class="filter-block">
+          <span class="filter-label">القسم</span>
+          <div class="chips" id="f-cat"></div>
+        </div>
+
+        <div class="filter-block">
+          <label for="f-type" class="filter-label">النوع</label>
+          <select id="f-type" class="input"></select>
+        </div>
+
+        <div class="filter-block">
+          <label for="f-size" class="filter-label">المقاس</label>
+          <select id="f-size" class="input"></select>
+        </div>
+
+        <div class="filter-block">
+          <label for="f-max" class="filter-label">أقصى سعر: <b id="f-max-val"></b></label>
+          <input type="range" id="f-max" step="50">
+        </div>
+
+        <button class="btn btn-ghost btn-block" id="f-reset" type="button">مسح الفلاتر</button>
+      </aside>
+
+      <section>
+        <div class="toolbar">
+          <button class="btn btn-ghost btn-sm filters-toggle" id="filters-toggle" type="button">الفلاتر</button>
+          <label class="sort">
+            <span class="muted">ترتيب:</span>
+            <select id="f-sort" class="input input-sm">
+              <option value="featured">المميز</option>
+              <option value="price-asc">السعر: من الأقل</option>
+              <option value="price-desc">السعر: من الأعلى</option>
+              <option value="discount">الخصومات</option>
+              <option value="new">الأحدث</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid" id="products"></div>
+        <div class="empty" id="empty" hidden>
+          <p>مفيش منتجات بالفلاتر دي.</p>
+          <button class="btn btn-primary" type="button" id="empty-reset">مسح الفلاتر</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pages/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>السلة | RM Shoes</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="cart">
+  <header id="site-header" class="site-header"></header>
+
+  <main class="container page">
+    <div class="page-head"><h1>سلة المشتريات</h1></div>
+
+    <div class="empty" id="cart-empty" hidden>
+      <p>السلة فاضية لسه.</p>
+      <a href="shop.html" class="btn btn-primary">ابدأ التسوق</a>
+    </div>
+
+    <div class="cart-layout" id="cart-layout" hidden>
+      <div>
+        <ul class="cart-list" id="cart-list"></ul>
+
+        <form class="checkout" id="checkout" novalidate>
+          <h2>بيانات التوصيل</h2>
+          <div class="form-grid">
+            <label class="field">
+              <span>الاسم بالكامل *</span>
+              <input class="input" name="name" required autocomplete="name">
+            </label>
+            <label class="field">
+              <span>رقم الموبايل *</span>
+              <input class="input" name="phone" type="tel" inputmode="tel" required autocomplete="tel"
+                     pattern="^(\+?20|0)?1[0125][0-9]{8}$" placeholder="01xxxxxxxxx" dir="ltr">
+            </label>
+            <label class="field">
+              <span>المحافظة *</span>
+              <select class="input" name="gov" required></select>
+            </label>
+            <label class="field">
+              <span>المدينة / المنطقة *</span>
+              <input class="input" name="city" required>
+            </label>
+            <label class="field field-full">
+              <span>العنوان بالتفصيل *</span>
+              <input class="input" name="address" required placeholder="الشارع، رقم العمارة، الدور، الشقة" autocomplete="street-address">
+            </label>
+            <label class="field field-full">
+              <span>ملاحظات (اختياري)</span>
+              <textarea class="input" name="notes" rows="2"></textarea>
+            </label>
+          </div>
+          <div class="pay-method">
+            <strong>طريقة الدفع</strong>
+            <span>💵 الدفع عند الاستلام</span>
+          </div>
+          <p class="error" id="form-error" hidden>من فضلك كمّل البيانات المطلوبة (*) وتأكد من رقم الموبايل.</p>
+        </form>
+      </div>
+
+      <aside class="summary">
+        <h2>ملخص الطلب</h2>
+        <div class="summary-row"><span>المجموع</span><span id="s-sub"></span></div>
+        <div class="summary-row"><span>الشحن</span><span id="s-ship"></span></div>
+        <p class="ship-hint" id="s-hint"></p>
+        <div class="summary-row summary-total"><span>الإجمالي</span><span id="s-total"></span></div>
+        <button type="submit" form="checkout" class="btn btn-primary btn-block">تأكيد الطلب على واتساب</button>
+        <p class="muted small">هيتفتح واتساب برسالة فيها تفاصيل طلبك، ابعتها وهنأكد معاك الأوردر.</p>
+      </aside>
+    </div>
+
+    <div class="empty success" id="order-done" hidden>
+      <h2>شكرًا لطلبك! 🎉</h2>
+      <p>لو واتساب مافتحش تلقائيًا، اضغط الزرار ده عشان تبعت الطلب:</p>
+      <a class="btn btn-primary" id="order-wa" target="_blank" rel="noopener">ابعت الطلب على واتساب</a>
+      <a href="shop.html" class="btn btn-ghost">كمّل تسوق</a>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pages/cart.js"></script>
+</body>
+</html>
